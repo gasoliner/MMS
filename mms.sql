@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : LOCALHOST
-Source Server Version : 50617
+Source Server         : ROOT
+Source Server Version : 50712
 Source Host           : localhost:3306
-Source Database       : mms
+Source Database       : mmms
 
 Target Server Type    : MYSQL
-Target Server Version : 50617
+Target Server Version : 50712
 File Encoding         : 65001
 
-Date: 2017-05-24 14:27:46
+Date: 2017-05-28 23:11:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -142,11 +142,13 @@ CREATE TABLE `user` (
   `password` varchar(32) DEFAULT NULL,
   `rid` int(5) DEFAULT NULL,
   `department` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('2', '王小明', '123123', '2', '后勤部');
-INSERT INTO `user` VALUES ('3', '王小红', '123123', '1', '技术部');
+INSERT INTO `user` VALUES ('2', '王小明', '111111', '2', '后勤部', '123@123.com', '1212121');
+INSERT INTO `user` VALUES ('3', '王小红', '123123', '1', '技术部', '123@123.com', '11111122222');

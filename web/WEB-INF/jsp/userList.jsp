@@ -28,6 +28,8 @@
             <th field="username" width="50">姓名</th>
             <th field="rid" width="50">角色编号</th>
             <th field="department" width="50">部门</th>
+            <th field="email" width="50">邮箱</th>
+            <th field="phone" width="50">电话</th>
         </tr>
         </thead>
     </table>
@@ -54,11 +56,14 @@
             <label>部门&nbsp;&nbsp;&nbsp;</label>
             <input name="department" class="easyui-validatebox">
         </div><br/>
-        <br/>
         <div class="fitem">
-            <label>密码&nbsp;&nbsp;&nbsp;</label>
-            <input name="password" type="password" class="easyui-validatebox">
-        </div>
+            <label>邮箱&nbsp;&nbsp;&nbsp;</label>
+            <input name="email" class="easyui-validatebox">
+        </div><br/>
+        <div class="fitem">
+            <label>电话&nbsp;&nbsp;&nbsp;</label>
+            <input name="phone" class="easyui-validatebox">
+        </div><br/>
     </form>
 </div>
 <div id="userForm-buttons">
