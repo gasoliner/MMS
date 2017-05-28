@@ -31,4 +31,5 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     List<User> selectAll(Page page);
+
 }

@@ -77,4 +77,22 @@ public class UserServiceImpl implements UserService {
             return null;
         }
     }
+
+    @Override
+    public boolean updatePassword(String newpass, String newpass_check, String oldpass, Integer uid) {
+        SqlSession sqlSession = PageUtil.openSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        if (userMapper.selectByPrimaryKey(uid).getPassword().equals(oldpass)){
+            if (newpass.equals(newpass_check)){
+                User user = new User();
+                user.setPassword(newpass);
+                user.setUid(uid);
+                userMapper.updateByPrimaryKeySelective(user);
+                sqlSession.commit();
+                sqlSession.close();
+                return true;
+            }
+        }
+        return false;
+    }
 }

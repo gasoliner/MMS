@@ -48,5 +48,13 @@
             </div>
         </div>
     </c:if>
+    <div title="个人信息管理" iconCls="icon-mini-edit" selected="true" style="padding:10px;">
+        <div class="menu-last">
+            <a href="#" class="easyui-linkbutton" onclick="addTab('个人资料修改','UI/personalInfo')">个人资料修改</a>
+        </div>
+        <div class="menu-last">
+            <a href="#" class="easyui-linkbutton" onclick="addTab('密码修改','UI/updatePass')">密码修改</a>
+        </div>
+    </div>
 </div>
 </body>

@@ -169,3 +169,28 @@ function dengchu() {
         window.location.href = "/UI/denglu";
     })
 }
+function perInf1() {
+    $.post("/user/update",
+        {
+            uid:$("#id").val(),
+            username:$("#username").val(),
+            department:$("#department").val(),
+            phone:$("#phone").val(),
+            email:$("#email").val()
+        },
+        function (data) {
+            alert(data);
+        });
+}
+function perPas1() {
+    $.post("/user/password",
+        {
+            uid:$("#id").val(),
+            oldpass:$("#oldpass").val(),
+            newpass:$("#newpass").val(),
+            newpass_check:$("#newpass_check").val()
+        },
+        function (data) {
+            alert(data);
+        });
+}

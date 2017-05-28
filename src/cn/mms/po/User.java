@@ -11,6 +11,10 @@ public class User {
 
     private String department;
 
+    private String email;
+
+    private String phone;
+
     public Integer getUid() {
         return uid;
     }
@@ -49,5 +53,21 @@ public class User {
 
     public void setDepartment(String department) {
         this.department = department == null ? null : department.trim();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 }

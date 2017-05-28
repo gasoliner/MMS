@@ -19,4 +19,6 @@ public interface UserService {
     public long count();
 
     User getObjectByUsername(String username);
+
+    boolean updatePassword(String newpass, String newpass_check, String oldpass, Integer uid);
 }

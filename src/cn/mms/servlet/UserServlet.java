@@ -41,8 +41,23 @@ public class UserServlet extends HttpServlet {
             resp.getWriter().print(denglu(req,resp));
         }else if (requestName.equals("dengchu")){
             dengchu(req);
+        }else if (requestName.equals("password")){
+            resp.getWriter().print(password(req));
         }else {
             resp.getWriter().print(update(req));
+        }
+    }
+
+    private String password(HttpServletRequest req) {
+        if (userService.updatePassword(
+                req.getParameter("newpass"),
+                req.getParameter("newpass_check"),
+                req.getParameter("oldpass"),
+                Integer.valueOf(req.getParameter("uid"))
+        )){
+            return JSON.toJSONString("修改成功，下次登录有效");
+        }else {
+            return JSON.toJSONString("修改失败");
         }
     }
 
@@ -75,7 +90,7 @@ public class UserServlet extends HttpServlet {
 
     public String update(HttpServletRequest request){
         userService.update(getObjectByRequest(request));
-        return JSON.toJSONString("successful");
+        return JSON.toJSONString("修改成功，下次登录生效");
     }
 
     public String list(HttpServletRequest request){
@@ -110,6 +125,12 @@ public class UserServlet extends HttpServlet {
         }
         if (parameterMap.get("department")!=null && parameterMap.get("department").length > 0){
             user.setDepartment(parameterMap.get("department")[0]);
+        }
+        if (parameterMap.get("phone")!=null && parameterMap.get("phone").length > 0){
+            user.setPhone(parameterMap.get("phone")[0]);
+        }
+        if (parameterMap.get("email")!=null && parameterMap.get("email").length > 0){
+            user.setEmail(parameterMap.get("email")[0]);
         }
         return user;
     }
